@@ -10,9 +10,10 @@ class Server(Node):
     def __init__(self):
         super().__init__("server_node")
 
-
         self.service_ = self.create_service(SetDegree,"/set_degree",self.callback_service)
-        self.file_location_ = "/home/ppa/ros2_ws/src/udemy_challenge_services/img/"
+        
+        #Here use your own path
+        self.file_location_ = "/home/.../img/"
         self.full_file_location_ = ""
         self.get_logger().info("Service iniciado")
 
@@ -42,19 +43,6 @@ class Server(Node):
 
             return response
     
-
-'''
-    float32 request_attr_name
-    ---
-    sensor_msgs/Image response_attr_name
-
-'''
-'''
-    int32 degree
-    ---
-    bool result
-'''
-
 
 
 def main():
